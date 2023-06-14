@@ -1,0 +1,558 @@
+/*
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="contenedor active">
+    <header>
+        <div class="logo">
+            <button id="boton-menu" class="boton-menu"><li class='bx bx-menu'></i></button>
+            <h1>Terminal</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar...">
+            <button><li class='bx bx-search'></li></button>
+        </div>
+        <div class="user">
+            <img src="img/user.jpg" alt="">
+        </div>
+    </header>
+    <div class="sidebar-container">
+      <aside class="sidebar-left">
+        <ul>
+          <li>
+            <a href="#"><i class="bx bxs-home"></i>Inicio</a>
+            <a href="#"><i class="bx bx-user"></i>Perfil</a>
+            <a href="#"><i class="bx bx-chat"></i>Mensajes</a>
+            <a href="#"><i class="bx bx-bell"></i>Notificaciones</a>
+          </li>
+          <hr>
+          <li>
+            <a href="#"><i class="bx bx-message-square"></i>Foro</a>
+            <a href="#"><i class="bx bx-image"></i>Galería</a>
+            <a href="#"><i class="bx bx-video"></i>Videos</a>
+            <a href="#"><i class="bx bx-music"></i>Música</a>
+            <a href="#"><i class="bx bx-book"></i>Libros</a>
+            <a href="#"><i class="bx bx-file"></i>Documentos</a>
+          </li>
+          <hr>
+          <li>
+            <a href="#"><i class="bx bx-bookmark"></i>Guardados</a>
+            <a href="#"><i class="bx bx-collection"></i>Grupos</a>
+            <a href="#"><i class="bx bx-calendar"></i>Eventos</a>
+            <a href="#"><i class="bx bx-compass"></i>Explorar</a>
+          </li>
+          <hr>
+          <li>
+            <a href="#"><i class="bx bx-pie-chart-alt-2"></i>Estadísticas</a>
+            <a href="#"><i class="bx bx-cog"></i>Configuración</a>
+          </li>
+          <hr>
+          <li>
+            <a href="#"><i class="br bx bx-help-circle"></i>Ayuda</a>
+            <a href="#"><i class="bx bxs-info-square"></i>Acerca de</a>
+            <a href="#"><i class="bx bx-log-out"></i>Cerrar Sesión</a>
+          </li>
+        </ul>
+        <div class="dark-light">
+          <div class="dark">
+            <i class="bx bxs-moon"></i>
+          </div>
+          <div class="light">
+            <i class="bx bx-sun"></i>
+          </div>
+        </div>
+        <div class="sidebar-footer">
+        <p class="version">v1.0</p>
+        </div>
+        <span></span>
+      </aside>
+    </div>
+    
+    <main class="main">
+        <section>
+            <h2>Contenido</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, dicta adipisci. Fugit sit alias unde soluta possimus dolorum tenetur tempora hic praesentium autem odio, optio deserunt omnis deleniti illum repudiandae.</p>
+        </section>
+    </main>
+    <aside id="sidebar-right">
+        <div class="ad-section">
+            <h2>Publicidad</h2>
+            <p>¡Compra nuestro producto ahora!</p>
+            <a href="#">Comprar</a>
+        </div>
+    </aside>
+    </div>
+</body>
+</html>
+
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para el scroll */
+::-webkit-scrollbar {
+    width: 9px;
+    /* Ancho del scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-background-color);
+    /* Color de fondo del track */
+    border-radius: 6px;
+    /* Borde del track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-color);
+    /* Color del thumb */
+    border-radius: 6px;
+    /* Borde del thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-color-hover);
+    /* Color del thumb al pasar el mouse */
+}
+
+:root {
+    /* Colores claros */
+    --primary-color: #101010;
+    --dark-color: #0a0a0a;
+    --light-color: #fff;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --selection-color: #2e2e2e;
+    --scrollbar-background-color: transparent;
+    --scrollbar-thumb-color: #888;
+    --scrollbar-thumb-hover-color: #555;
+    --scrollbar-track-color: #333;
+}
+
+body.light-theme {
+    /* Colores claros */
+    --primary-color: #f5f5f5;
+    --dark-color: #f0f0f0;
+    --light-color: #000;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --selection-color: #dcdcdc;
+    --scrollbar-background-color: transparent;
+    --scrollbar-thumb-color: #888;
+    --scrollbar-thumb-hover-color: #555;
+    --scrollbar-track-color: #ccc;
+  }
+  
+/* Medidas de texto */
+:root, body.light-theme {
+    --font-size-small: 16px;
+    --font-size-normal: 17px;
+    --font-size-medium: 18px;
+    --font-size-large: 20px;
+    --font-size-xlarge: 24px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+
+/* Contenedor principal */
+.contenedor {
+    display: grid;
+    grid-template-columns: 200px 1fr 250px;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "header header header"
+        "sidebar-left main sidebar-right";
+    grid-gap: 0 20px;
+    overflow: hidden;
+}
+
+/* Encabezado */
+header {
+    grid-area: header;
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--dark-color);
+    padding: 5px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    grid-gap: 20px;
+    grid-template-areas: "logo search-bar user";
+}
+
+/* Logo */
+.logo {
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Botón de menú */
+.boton-menu {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton-menu:hover {
+    background-color: var(--selection-color);
+}
+
+.boton-menu li {
+    color: var(--light-color);
+}
+
+
+/* Barra de búsqueda */
+.search-bar {
+    grid-area: search-bar;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bar input {
+    all: unset;
+    font: 16px system-ui;
+    width: 60%;
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px 0 0 5px;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.search-bar input::placeholder {
+    color: var(--light-color);
+    opacity: 0.7;
+}
+
+.search-bar button {
+    all: unset;
+    cursor: pointer;
+    width: 50px;
+    height: 39px;
+    border: 1px solid var(--border-color);
+    background-color: var(--primary-color);
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar button:hover {
+    background-color: var(--selection-color);
+}
+
+/* Usuario */
+.user {
+    grid-area: user;
+    display: flex;
+    align-items: center;
+}
+
+.user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Barra lateral izquierda */
+aside {
+    background-color: var(--dark-color);
+}
+
+.sidebar-container {
+    grid-area: sidebar-left;
+    display: flex;
+    overflow: auto;
+    scroll-behavior: auto;
+    height: auto;
+}
+
+
+.sidebar-left {
+    background-color: var(--dark-color);
+    padding: 5px;
+    width: 200px;
+}
+
+.sidebar-left ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-left ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar-left ul li a {
+    display: flex;
+    align-items: center;
+    color: var(--light-color);
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-left ul li a .bx {
+    margin-right: 15px;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.sidebar-left ul li a:hover {
+    background-color: var(--selection-color);
+    border-radius: 4px;
+}
+
+.sidebar-left hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 10px 0;
+}
+
+.sidebar-container {
+    grid-area: sidebar-left;
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: auto;
+}
+
+.sidebar-container:hover {
+    overflow: auto;
+}
+
+.sidebar-container::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 6px;
+    background-color: transparent;
+    opacity: 0;
+    /* Oculta la barra de desplazamiento por defecto */
+    transition: opacity 0.3s ease;
+}
+
+.sidebar-container:hover::-webkit-scrollbar {
+    opacity: 1;
+    /* Muestra la barra de desplazamiento al pasar el puntero */
+    background-color: var(--scrollbar-background-color);
+}
+
+.sidebar-container::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-color);
+    border-radius: 6px;
+}
+
+.sidebar-container::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover-color);
+}
+
+.sidebar-container::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track-color);
+    border-radius: 6px;
+}
+
+/* Button theme */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .dark-light {
+    display: flex;
+    align-items: center;
+    margin-right: 1em;
+  }
+
+  .dark,
+  .light {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background-color: #414141;
+    color: white;
+    cursor: pointer;
+  }
+
+  .dark.active,
+  .light.active {
+    display: flex;
+  }
+
+  .dark:hover,
+  .light:hover {
+    background-color: #333;
+  }
+
+  .dark i,
+  .light i {
+    font-size: 1.2em;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+  }
+
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    border: 2px solid #414141;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    left: 0.2em;
+    bottom: 0.2em;
+    background-color: white;
+    border-radius: inherit;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .switch input:checked + .slider {
+    box-shadow: 0 0 20px rgba(9, 117, 241, 0.8);
+    border: 2px solid #0974f1;
+  }
+
+  .switch input:checked + .slider:before {
+    transform: translateX(1.5em);
+  }
+
+  /* Add styles for the light theme */
+  .light-theme {
+    background-color: #f5f5f5;
+    color: #333;
+  }
+
+  .light-theme .dark,
+  .light-theme .light {
+    background-color: #f5f5f5;
+    color: #333;
+  }
+
+  .light-theme .dark:hover,
+  .light-theme .light:hover {
+    background-color: #ddd;
+  }
+
+  .light-theme .slider {
+    border: 2px solid #f5f5f5;
+  }
+
+  .light-theme .slider:before {
+    background-color: #333;
+  }
+
+
+/* Contenido principal */
+.main {
+    grid-area: main;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+/* Barra lateral derecha */
+#sidebar-right {
+    grid-area: sidebar-right;
+    position: sticky;
+    top: 50px;
+    margin: 10px 10px 10px 0;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+/* Sección de publicidad */
+.ad-section {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: var(--dark-color);
+}
+
+.ad-section h2 {
+    margin-top: 0;
+}
+
+.ad-section p {
+    margin-bottom: 10px;
+}
+
+.ad-section a {
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    text-decoration: none;
+}
+
+.ad-section a:hover {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+}
+
+/* Tamaños de texto */
+p {
+    font-size: var(--font-size-medium);
+}
+
+h1 {
+    font-size: var(--font-size-large);
+}
+
+a {
+    font-size: var(--font-size-normal);
+}

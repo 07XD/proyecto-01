@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terminal</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <div class="contenedor active">
+    <header>
+      <div class="logo">
+        <button id="boton-menu" class="boton-menu">
+          <li class='bx bx-menu'></i>
+        </button>
+        <h1>Terminal</h1>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar...">
+        <button>
+          <li class='bx bx-search'></li>
+        </button>
+      </div>
+      <div class="user">
+        <img src="img/user.jpg" alt="">
+      </div>
+    </header>
+    <div class="sidebar-container">
+      <aside class="sidebar-left">
+        <ul>
+          <li>
+            <a href="#"><i class="bx bxs-home"></i>Inicio</a>
+            <a href="#"><i class="bx bx-user"></i>Perfil</a>
+            <a href="#"><i class="bx bx-chat"></i>Mensajes</a>
+            <a href="#"><i class="bx bx-bell"></i>Notificaciones</a>
+          </li>
+          <hr>
+          <li>
+            <a href="#"><i class="bx bx-message-square"></i>Foro</a>
+            <a href="#"><i class="bx bx-image"></i>Galería</a>
+            <a href="#"><i class="bx bx-video"></i>Videos</a>
+            <a href="#"><i class="bx bx-music"></i>Música</a>
+            <a href="#"><i class="bx bx-book"></i>Libros</a>
+            <a href="#"><i class="bx bx-file"></i>Documentos</a>
+          </li>
+          <hr>
+          <li>
+            <a href="#"><i class="bx bx-bookmark"></i>Guardados</a>
+            <a href="#"><i class="bx bx-collection"></i>Grupos</a>
+            <a href="#"><i class="bx bx-calendar"></i>Eventos</a>
+            <a href="#"><i class="bx bx-compass"></i>Explorar</a>
+          </li>
+          <hr>
+          <li>
+            <a href="#"><i class="bx bx-pie-chart-alt-2"></i>Estadísticas</a>
+            <a href="#"><i class="bx bx-cog"></i>Configuración</a>
+          </li>
+          <hr>
+          <li>
+            <a href="#"><i class="br bx bx-help-circle"></i>Ayuda</a>
+            <a href="#"><i class="bx bxs-info-square"></i>Acerca de</a>
+            <a href="#"><i class="bx bx-log-out"></i>Cerrar Sesión</a>
+          </li>
+        </ul>
+
+        <div class="theme-switch-wrapper">
+          <div class="dark-light">
+            <div class="dark">
+              <i class="bx bxs-moon"></i>
+            </div>
+            <div class="light">
+              <i class="bx bx-sun"></i>
+            </div>
+          </div>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="sidebar-footer">
+          <span>Terminal</span>
+          <p class="version">v1.0</p>
+        </div>
+
+      </aside>
+    </div>
+
+    <main class="main">
+      <section>
+        <h2>Contenido</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, dicta adipisci. Fugit sit alias unde soluta
+          possimus dolorum tenetur tempora hic praesentium autem odio, optio deserunt omnis deleniti illum repudiandae.
+        </p>
+      </section>
+    </main>
+    <aside id="sidebar-right">
+      <div class="ad-section">
+        <h2>Publicidad</h2>
+        <p>¡Compra nuestro producto ahora!</p>
+        <a href="#">Comprar</a>
+      </div>
+    </aside>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
