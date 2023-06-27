@@ -350,11 +350,12 @@ header {
 .sidebar-slider ul li a,
 .sidebar-left ul li a {
     display: flex;
+    height: 43px;
     align-items: center;
     color: var(--light-color);
     text-decoration: none;
     padding: 10px;
-    transition: background-color 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .sidebar-slider ul li a .bx,
